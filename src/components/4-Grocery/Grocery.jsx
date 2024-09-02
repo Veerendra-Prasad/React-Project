@@ -1,10 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "./Card";
+import Message from "./Message";
 
 function Grocery() {
   const refNameContainer = useRef(null);
   const [open, setOpen] = useState(false);
-  const [data,setData] = useState([])
+  const [data, setData] = useState([]);
+  const [show, setShow] = useState(false);
+  const [change , setChange] = useState(false);
 
   function closeoption() {
     setOpen(false);
@@ -14,32 +17,45 @@ function Grocery() {
     setOpen(true);
   }
 
-  function additem(){
+  function additem() {
     const item = refNameContainer.current.value;
-    if(item){
-        const newitem = {
-            id : new Date().getTime().toString(),
-            name : item
-        }
-        setData((oldData)=>{
-            return [...oldData , newitem]
-        })
-        setOpen(false)
+    if (item) {
+      const newitem = {
+        id: new Date().getTime().toString(),
+        name: item,
+      };
+      setData((oldData) => {
+        return [...oldData, newitem];
+      });
+      setOpen(false);
+      setShow(true)
     }
     refNameContainer.current.value = null;
   }
 
-  function removeitem(id){
-    setData((oldData)=>{
-        return oldData.filter((item)=>{
-            return item.id !== id;
-        })
-    })
+  function removeitem(id) {
+    setData((oldData) => {
+      return oldData.filter((item) => {
+        return item.id !== id;
+      });
+    });
+    setShow(true)
   }
 
   const styles = {
     display: open ? "flex" : "none",
   };
+
+  useEffect(()=>{
+    setChange(true)
+    setTimeout(() => {
+      setChange(false)
+    }, 3000);
+
+    return ()=>{
+      return window.clearTimeout();
+    }
+  },[show])
 
   return (
     <div className="w-full h-screen ">
@@ -61,10 +77,17 @@ function Grocery() {
             <label htmlFor="enter" className="font-semibold">
               Enter the Item :
             </label>
-            <input type="text" id="enter" className="p-1 rounded-md" ref={refNameContainer} />
+            <input
+              type="text"
+              id="enter"
+              className="p-1 rounded-md"
+              ref={refNameContainer}
+            />
           </div>
           <div className="w-full flex justify-center items-center p-5 ">
-            <button className="sm-btn" onClick={additem}>Add Item</button>
+            <button className="sm-btn" onClick={additem}>
+              Add Item
+            </button>
           </div>
         </div>
       </div>
@@ -79,9 +102,16 @@ function Grocery() {
           </button>
         </div>
         <div className="w-full sm:w-1/3 flex flex-col justify-center items-center gap-2">
-         {data.map((item)=>{
-            return <Card name={item.name} remove={removeitem} id={item.id} key={item.id} />
-         })}
+          {data.map((item) => {
+            return (
+              <Card
+                name={item.name}
+                remove={removeitem}
+                id={item.id}
+                key={item.id}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
