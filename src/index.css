@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .btn {
+        @apply w-28 h-9 text-white bg-sky-500 rounded-md border-2 border-black hover:border-sky-400 hover:bg-gray-100 hover:text-black hover:font-semibold;
+    }
+}
