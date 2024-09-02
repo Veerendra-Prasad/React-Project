@@ -7,7 +7,7 @@ function First() {
   return (
     <div className="w-full">
       <div className="-z-50 absolute w-full h-full overflow-hidden">
-        <img src={photo} className="h-full w-full object-cover"/>
+        <img src={photo} className="h-screen w-full object-cover"/>
       </div>
       <div className="w-full h-screen flex flex-col gap-10 sm:flex-row  ">
         <div className="w-full h-2/6 sm:w-1/3 sm:h-full flex justify-start items-center">
