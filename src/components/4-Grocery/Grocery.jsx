@@ -6,8 +6,7 @@ function Grocery() {
   const refNameContainer = useRef(null);
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
-  const [show, setShow] = useState(false);
-  const [change , setChange] = useState(false);
+  const [show , setShow] = useState({showing : false , msg : ""})
 
   function closeoption() {
     setOpen(false);
@@ -15,6 +14,10 @@ function Grocery() {
 
   function openoption() {
     setOpen(true);
+  }
+
+  function showAlert(showing=false,msg=""){
+    setShow({showing,msg})
   }
 
   function additem() {
@@ -28,7 +31,7 @@ function Grocery() {
         return [...oldData, newitem];
       });
       setOpen(false);
-      setShow(true)
+      showAlert(true,"Item Added");
     }
     refNameContainer.current.value = null;
   }
@@ -39,23 +42,12 @@ function Grocery() {
         return item.id !== id;
       });
     });
-    setShow(true)
+    showAlert(true , "Item Removed");
   }
 
   const styles = {
     display: open ? "flex" : "none",
   };
-
-  useEffect(()=>{
-    setChange(true)
-    setTimeout(() => {
-      setChange(false)
-    }, 3000);
-
-    return ()=>{
-      return window.clearTimeout();
-    }
-  },[show])
 
   return (
     <div className="w-full h-screen ">
@@ -91,6 +83,8 @@ function Grocery() {
           </div>
         </div>
       </div>
+
+      {show.showing && <Message {...show} remove={showAlert} />}
 
       <h1 className="text-xl font-semibold flex justify-center items-center p-10">
         Grocery List
