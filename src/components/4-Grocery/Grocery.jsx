@@ -72,7 +72,7 @@ function Grocery() {
             <input
               type="text"
               id="enter"
-              className="p-1 rounded-md"
+              className="p-1 rounded-md border-2 border-black"
               ref={refNameContainer}
             />
           </div>

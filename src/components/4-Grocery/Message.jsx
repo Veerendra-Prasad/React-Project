@@ -13,7 +13,7 @@ function Message({msg , remove}) {
   return (
     <div className="w-full p-3  flex justify-center items-center ">
       <div className="w-full sm:w-1/3 bg-slate-200 flex justify-center items-center p-3 rounded-md">
-        <h1>{msg}</h1>
+        <h1 className="text-lg">{msg}</h1>
       </div>
     </div>
   );

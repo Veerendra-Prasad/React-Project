@@ -13,7 +13,7 @@ function Project() {
             </div>
             <div className="w-full h-20 flex justify-center items-center">
               <button className="w-28 h-9 bg-sky-500 rounded-md border-2 border-black hover:border-sky-400 hover:bg-gray-100 hover:text-black hover:font-semibold">
-                Source Code
+                Open Project
               </button>
             </div>
           </div>
@@ -25,7 +25,7 @@ function Project() {
             </div>
             <div className="w-full h-20 flex justify-center items-center">
               <button className="w-28 h-9 bg-sky-500 rounded-md border-2 border-black hover:border-sky-400 hover:bg-gray-100 hover:text-black hover:font-semibold">
-                Source Code
+                Open Project
               </button>
             </div>
           </div>
@@ -37,7 +37,7 @@ function Project() {
             </div>
             <div className="w-full h-20 flex justify-center items-center">
               <button className="w-28 h-9 bg-sky-500 rounded-md border-2 border-black hover:border-sky-400 hover:bg-gray-100 hover:text-black hover:font-semibold">
-                Source Code
+                Open Project
               </button>
             </div>
           </div>
@@ -49,7 +49,7 @@ function Project() {
             </div>
             <div className="w-full h-20 flex justify-center items-center">
               <button className="w-28 h-9 bg-sky-500 rounded-md border-2 border-black hover:border-sky-400 hover:bg-gray-100 hover:text-black hover:font-semibold">
-                Source Code
+                Open Project
               </button>
             </div>
           </div>
