@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from './Header'
-import { Outlet } from 'react-router-dom'
+import React, { useState } from "react";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -8,7 +8,7 @@ function NavBar() {
       <Header />
       <Outlet />
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

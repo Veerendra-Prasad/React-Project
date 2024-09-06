@@ -36,7 +36,7 @@ function Todo() {
           ref={refContainer}
         />
         <button
-          className="border-2 border-gray-600 bg-gray-500 text-white w-16 h-8 rounded-md"
+          className="btn"
           onClick={additem}
         >
           Add
