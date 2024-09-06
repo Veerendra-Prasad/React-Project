@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "./Context";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const { hide } = useGlobalContext();
@@ -17,13 +18,13 @@ function Sidebar() {
       <div className="h-2/3 pt-5">
         <ul className="w-full flex flex-col gap-4 justify-center items-center font-lg font-semibold">
           <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12">
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12">
-            <a href="/projects">Projects</a>
+            <Link to="/projects">Projects</Link>
           </li>
         </ul>
       </div>
