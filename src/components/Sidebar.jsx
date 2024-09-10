@@ -17,13 +17,13 @@ function Sidebar() {
       </div>
       <div className="h-2/3 pt-5">
         <ul className="w-full flex flex-col gap-4 justify-center items-center font-lg font-semibold">
-          <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12">
+          <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12" onClick={hide}>
             <Link to="/">Home</Link>
           </li>
-          <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12">
+          <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12" onClick={hide}>
             <Link to="/about">About</Link>
           </li>
-          <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12">
+          <li className="w-full flex justify-center items-center hover:bg-sky-100 h-12" onClick={hide}>
             <Link to="/projects">Projects</Link>
           </li>
         </ul>
