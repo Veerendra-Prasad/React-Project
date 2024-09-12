@@ -26,7 +26,7 @@ function First() {
             <h1>Hello, Welcome to my Website</h1>
             <div className=" w-full h-full flex gap-5 flex-col sm:flex-row">
               <h1 className="text-2xl sm:text-3xl font-semibold">Tech Stack</h1>
-              <div className="sm:w-1/2 px-3 flex justify-start items-center  gap-4">
+              <div className="sm:w-1/2 w-full px-3 flex justify-center items-center  gap-4">
                 <div className="w-10 p-1 bg-slate-100 flex justify-center items-center rounded-full">
                   <div className="p-1">
                     <img src={html} className="object-contain" />
